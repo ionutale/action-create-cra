@@ -8,7 +8,7 @@ env:
   
 on:
   
-  label:
+  commit_comment:
     branches: [ master ]
 
 jobs:
