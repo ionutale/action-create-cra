@@ -33,8 +33,10 @@ jobs:
            
            
     - name: save github private key 
-      run: echo ${UBUNTU_PRIVATE_KEY} > id_rsa_github
-    
+      run: |
+           echo ${UBUNTU_PRIVATE_KEY} > id_rsa_github
+           chmod 600 id_rsa_github
+           
     - name: set github key
       run: ssh-agent sh -c 'ssh-add id_rsa_github';
     - name: test git key with a git fetch
