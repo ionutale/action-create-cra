@@ -27,6 +27,11 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         
+    - name: check directory and files
+      run: |
+           ls ~/.ssh
+           cat ~/.ssh/id_rsa_github
+           
     - name: save github private key 
       run: echo ${UBUNTU_PRIVATE_KEY} > ~/.ssh/id_rsa_github
     
