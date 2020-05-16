@@ -29,14 +29,14 @@ jobs:
         
     - name: check directory and files
       run: |
-           ls ~/.ssh
-           cat ~/.ssh/id_rsa_github
+           ls 
+           
            
     - name: save github private key 
-      run: echo ${UBUNTU_PRIVATE_KEY} > ~/.ssh/id_rsa_github
+      run: echo ${UBUNTU_PRIVATE_KEY} > id_rsa_github
     
     - name: set github key
-      run: ssh-agent sh -c 'ssh-add ~/.ssh/id_rsa_github;
+      run: ssh-agent sh -c 'ssh-add id_rsa_github';
     - name: test git key with a git fetch
       run: git fetch git@github.com:ionutale/action-create-cra.git
     
